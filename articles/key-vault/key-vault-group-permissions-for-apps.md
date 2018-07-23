@@ -24,35 +24,29 @@ ms.author: ambapat
 Key Vault access control policy only supports 16 entries. However you can create an Azure Active Directory security group. Add all the associated service principals to this security group and then grant access to this security group to Key Vault.
 
 Here are the pre-requisites:
-* [Install Azure Active Directory V2 PowerShell module](https://www.powershellgallery.com/packages/AzureAD/2.0.0.30).
-* [Install Azure PowerShell](../powershell-install-configure.md).
+* [Install Azure Active Directory V2 PowerShell module](https://www.powershellgallery.com/packages/AzureAD).
+* [Install Azure PowerShell](/powershell/azure/overview).
 * To run the following commands, you need permissions to create/edit groups in the Azure Active Directory tenant. If you don't have permissions, you may need to contact your Azure Active Directory administrator.
 
 Now run the following commands in PowerShell.
 
-
-```
-
+```powershell
 # Connect to Azure AD 
-
 Connect-AzureAD 
  
 # Create Azure Active Directory Security Group 
 $aadGroup = New-AzureADGroup -Description "Contoso App Group" -DisplayName "ContosoAppGroup" -MailEnabled 0 -MailNickName none -SecurityEnabled 1 
  
 # Find and add your applications (ServicePrincipal ObjectID) as members to this group 
- 
 $spn = Get-AzureADServicePrincipal –SearchString "ContosoApp1" 
 Add-AzureADGroupMember –ObjectId $aadGroup.ObjectId -RefObjectId $spn.ObjectId 
  
 # You can add several members to this group, in this fashion. 
  
 # Set the Key Vault ACLs 
- 
-Set-AzureRmKeyVaultAccessPolicy –VaultName ContosoVault –ObjectId $aadGroup.ObjectId -PermissionToKeys all –PermissionToSecrets all –PermissionToCertificates all 
+Set-AzureRmKeyVaultAccessPolicy –VaultName ContosoVault –ObjectId $aadGroup.ObjectId -PermissionsToKeys all –PermissionsToSecrets all –PermissionsToCertificates all 
  
 # Of course you can adjust the permissions as required 
-
 ```
 
 If you need to grant a different set of permissions to a group of applications, create a separate Azure Active Directory security group for such applications.

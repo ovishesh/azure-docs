@@ -1,23 +1,23 @@
 ---
-title: Resources, roles and access control in Application Insights
+title: Resources, roles and access control in Azure Application Insights | Microsoft Docs
 description: Owners, contributors and readers of your organization's insights.
 services: application-insights
 documentationcenter: ''
-author: alancameronwills
-manager: douge
+author: mrbullwinkle
+manager: carmonm
 
 ms.assetid: 49f736a5-67fe-4cc6-b1ef-51b993fb39bd
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
-ms.date: 05/07/2016
-ms.author: awills
+ms.topic: conceptual
+ms.date: 03/17/2017
+ms.author: mbullwin
 
 ---
 # Resources, roles, and access control in Application Insights
-You can control who has read and update access to your data in Visual Studio [Application Insights][start], by using [Role-based access control in Microsoft Azure](../active-directory/role-based-access-control-configure.md).
+You can control who has read and update access to your data in Azure [Application Insights][start], by using [Role-based access control in Microsoft Azure](../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
 > Assign access to users in the **resource group or subscription** to which your application resource belongs - not in the resource itself. Assign the **Application Insights component contributor** role. This ensures uniform control of access to web tests and alerts along with your application resource. [Learn more](#access).
@@ -29,9 +29,9 @@ First, some definitions:
 
 * **Resource** - An instance of a Microsoft Azure service. Your Application Insights resource collects, analyzes and displays the telemetry data sent from your application.  Other types of Azure resources include web apps, databases, and VMs.
   
-    To see all your resources, go to the [Azure Portal][portal], sign in, and click Browse.
+    To see your resources, open the [Azure Portal][portal], sign in, and click All Resources. To find a resource, type part of its name in the filter field.
   
-    ![Choose Browse, then either Everything or Filter by Application Insights](./media/app-insights-resources-roles-access-control/10-browse.png)
+    ![List of Azure resources](./media/app-insights-resources-roles-access-control/10-browse.png)
 
 <a name="resource-group"></a>
 
@@ -39,7 +39,7 @@ First, some definitions:
 
     ![Choose Browse, Resource groups, then choose a group](./media/app-insights-resources-roles-access-control/11-group.png)
 
-* [**Subscription**](https://manage.windowsazure.com) - To use Application Insights or other Azure resources, you sign in to an Azure subscription. Every resource group belongs to one Azure subscription, where you choose your price package and, if it's an organization subscription, choose the members and their access permissions.
+* [**Subscription**](https://portal.azure.com) - To use Application Insights or other Azure resources, you sign in to an Azure subscription. Every resource group belongs to one Azure subscription, where you choose your price package and, if it's an organization subscription, choose the members and their access permissions.
 * [**Microsoft account**][account] - The username and password that you use to sign in to Microsoft Azure subscriptions, XBox Live, Outlook.com, and other Microsoft services.
 
 ## <a name="access"></a> Control access in the resource group
@@ -55,7 +55,7 @@ To control access to these resources it's therefore recommended to:
 ## To provide access to another user
 You must have Owner rights to the subscription or the resource group.
 
-The user must have a [Microsoft Account][account], or access to their [organizational Microsoft Account](../active-directory/sign-up-organization.md). You can provide access to individuals, and also to user groups defined in Azure Active Directory.
+The user must have a [Microsoft Account][account], or access to their [organizational Microsoft Account](../active-directory/fundamentals/sign-up-organization.md). You can provide access to individuals, and also to user groups defined in Azure Active Directory.
 
 #### Navigate to the resource group
 Add the user there.
@@ -82,13 +82,13 @@ Or you could go up another level and add the user to the Subscription.
 * Continuous export
 
 #### Select the user
-![Type the email address of a new user. Select the user](./media/app-insights-resources-roles-access-control/04-user.png)
 
 If the user you want isn't in the directory, you can invite anyone with a Microsoft account.
 (If they use services like Outlook.com, OneDrive, Windows Phone, or XBox Live, they have a Microsoft account.)
 
-## Users and roles
-* [Role based access control in Azure](../active-directory/role-based-access-control-configure.md)
+## Related content
+
+* [Role based access control in Azure](../role-based-access-control/role-assignments-portal.md)
 
 <!--Link references-->
 

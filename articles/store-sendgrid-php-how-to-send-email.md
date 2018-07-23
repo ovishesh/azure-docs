@@ -55,7 +55,7 @@ SendGrid.
 To send email using the SendGrid SMTP API, use *Swift Mailer*, a
 component-based library for sending emails from PHP applications. You
 can download the *Swift Mailer* library from
-[http://swiftmailer.org/download][http://swiftmailer.org/download] v5.3.0 (use [Composer] to install Swift Mailer). Sending email with the library
+[http://swiftmailer.org/download][https://swiftmailer.symfony.com/] v5.3.0 (use [Composer] to install Swift Mailer). Sending email with the library
 involves creating instances of the
 <span class="auto-style2">Swift\_SmtpTransport</span>,
 <span class="auto-style2">Swift\_Mailer</span>, and
@@ -69,9 +69,9 @@ appropriate properties, and calling the
       * Create the body of the message (a plain-text and an HTML version).
       * $text is your plain-text email
       * $html is your html version of the email
-      * If the reciever is able to view html emails then only the html
+      * If the receiver is able to view html emails then only the html
       * email will be displayed
-      */ 
+      */
      $text = "Hi!\nHow are you?\n";
      $html = "<html>
            <head></head>
@@ -110,7 +110,7 @@ appropriate properties, and calling the
      $message->setTo($to);
      $message->addPart($text, 'text/plain');
 
-     // send message 
+     // send message
      if ($recipients = $swift->send($message, $failures))
      {
          // This will let us know how many users received this message
@@ -130,7 +130,7 @@ Use PHP's [curl function][curl function] to send email using the SendGrid Web AP
 
      $url = 'https://api.sendgrid.com/';
      $user = 'USERNAME';
-     $pass = 'PASSWORD'; 
+     $pass = 'PASSWORD';
 
      $params = array(
           'api_user' => $user,
@@ -223,7 +223,7 @@ code to the example script for sending an email with Swift Mailer.
      $message->addPart($text, 'text/plain');
      $message->attach(Swift_Attachment::fromPath("path\to\file")->setFileName("file_name"));
 
-     // send message 
+     // send message
      if ($recipients = $swift->send($message, $failures))
      {
           // This will let us know how many users received this message
@@ -341,7 +341,7 @@ Example:
      // Specify that this is an initial contact message
      $email->addCategory("initial");
 
-     // You can optionally setup individual filters here, in this example, we have 
+     // You can optionally setup individual filters here, in this example, we have
      // enabled the footer filter
      $email->addFilter('footer', 'enable', 1);
      $email->addFilter('footer', "text/plain", "Thank you for your business");
@@ -350,16 +350,16 @@ Example:
      // The subject of your email
      $subject = 'Example SendGrid Email';
 
-     // Where is this message coming from. For example, this message can be from 
+     // Where is this message coming from. For example, this message can be from
      // support@yourcompany.com, info@yourcompany.com
      $from = 'someone@example.com';
 
-     // If you do not specify a sender list above, you can specifiy the user here. If 
+     // If you do not specify a sender list above, you can specifiy the user here. If
      // a sender list IS specified above, this email address becomes irrelevant.
      $to = 'john@contoso.com';
 
-     # Create the body of the message (a plain-text and an HTML version). 
-     # text is your plain-text email 
+     # Create the body of the message (a plain-text and an HTML version).
+     # text is your plain-text email
      # html is your html version of the email
      # if the receiver is able to view html emails then only the html
      # email will be displayed
@@ -374,7 +374,7 @@ Example:
      Fred";
 
      $html = "
-     <html> 
+     <html>
      <head></head>
      <body>
      <p>Hello -name-,<br>

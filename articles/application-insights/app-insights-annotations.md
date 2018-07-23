@@ -3,21 +3,21 @@ title: Release annotations for Application Insights | Microsoft Docs
 description: Add deployment or build markers to your metrics explorer charts in Application Insights.
 services: application-insights
 documentationcenter: .net
-author: alancameronwills
-manager: douge
+author: mrbullwinkle
+manager: carmonm
 
 ms.assetid: 23173e33-d4f2-4528-a730-913a8fd5f02e
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/16/2016
-ms.author: awills
+ms.author: mbullwin
 
 ---
 # Annotations on metric charts in Application Insights
-Annotations on [Metrics Explorer](app-insights-metrics-explorer.md) charts show where you deployed a new build, or other significant event. They make it easy to see whether your changes had any effect on your application's performance. They can be automatically created by the [Visual Studio Team Services build system](https://www.visualstudio.com/en-us/get-started/build/build-your-app-vs). You can also create annotations to flag any event you like by [creating them from PowerShell](#create-annotations-from-powershell).
+Annotations on [Metrics Explorer](app-insights-metrics-explorer.md) charts show where you deployed a new build, or other significant event. They make it easy to see whether your changes had any effect on your application's performance. They can be automatically created by the [Visual Studio Team Services build system](https://docs.microsoft.com/vsts/pipelines/tasks/). You can also create annotations to flag any event you like by [creating them from PowerShell](#create-annotations-from-powershell).
 
 ![Example of annotations with visible correlation with server response time](./media/app-insights-annotations/00.png)
 
@@ -65,7 +65,7 @@ You need to get a separate API key for each VSTS release template.
    
     Paste your API key to the ApiKey variable definition.
    
-    ![In the Team Services window, select the Configuration tab and click Add Variable. Set the name to ApiKey and into the Value, paste the key you just generated.](./media/app-insights-annotations/50.png)
+    ![In the Team Services window, select the Configuration tab and click Add Variable. Set the name to ApiKey and into the Value, paste the key you just generated, and click the lock icon.](./media/app-insights-annotations/50.png)
 7. Finally, **Save** the release definition.
 
 

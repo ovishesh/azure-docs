@@ -1,10 +1,10 @@
-﻿---
+---
 title: Azure Active Directory hybrid identity design considerations- next steps| Microsoft Docs
 description: A synopsis and next steps after you have read the Hybrid Identity design considerations guide
 documentationcenter: ''
 services: active-directory
 author: billmath
-manager: femila
+manager: mtillman
 editor: ''
 
 ms.assetid: 02d48768-ea9e-4bfe-ae54-b54c4bd0a789
@@ -13,7 +13,8 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/08/2016
+ms.date: 07/18/2017
+ms.component: hybrid
 ms.author: billmath
 
 ---
@@ -37,7 +38,7 @@ Conceptual and procedural planning, deployment, and administration content are u
 ## Hybrid identity resources
 Monitoring the following resources often provides the latest news and updates on mobile device management solutions:
 
-* [Microsoft Enterprise Mobility blog](http://blogs.technet.com/b/enterprisemobility/)
+* [Microsoft Enterprise Mobility blog](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
 * [Microsoft In The Cloud blog](http://blogs.technet.com/b/in_the_cloud/)
 * [Microsoft Intune blog](http://blogs.technet.com/b/microsoftintune/)
 * [Microsoft System Center Configuration Manager blog](http://blogs.technet.com/b/configurationmgr/)
